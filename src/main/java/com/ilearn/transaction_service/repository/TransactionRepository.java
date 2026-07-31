@@ -1,5 +1,8 @@
 package com.ilearn.transaction_service.repository;
 
-public class TransactionRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import com.ilearn.transaction_service.model.TransactionModel;
+
+public interface TransactionRepository extends JpaRepository<TransactionModel, Integer>{
 
 }
