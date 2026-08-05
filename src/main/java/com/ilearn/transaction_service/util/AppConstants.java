@@ -18,15 +18,10 @@ public class AppConstants {
 	public static final String DELETED = "Account Deleted Successfully";
 	public static final String ACCOUNT_NUMBER = "Account Number is Required";
 	public static final String ACCOUNT_NOT_FOUND = "Account Number is Not Exists";
-	public static final String AADHAR_NUMBER = "Aadhar Number is Required";
-	public static final String MOBILE_NUMBER = "Mobile Number is Required";
+	public static final String DEPOSIT_SUCCESS = "Your Amount is Deposited Successfully";
+	public static final String WITHDRAW_SUCCESS = "Your Amount is Withdraw Successfully";
 	public static final String ACCOUNT_NUMBER_DUPLICATE = "Account Number is Already Exists";
 	public static final String AADHAR_NUMBER_DUPLICATE  = "Aadhar Number is Already Exists";
-	public static final String MOBILE_NUMBER_DUPLICATE  = "Mobile Number is Already Exists";
-	public static final String ACCOUNT_NUMBER_DIGITS = "Account number must be exactly 10 digits";
-	public static final String AADHAR_NUMBER_DIGITS = "Aadhar number must be exactly 12 digits";
-	public static final String MOBILE_NUMBER_DIGITS = "Mobile number must be exactly 10 digits";
-	public static final String ACCOUNT_CREATE_TOPIC = "account-created-topic";
 	public static final String AMOUNT_GREATER_THAN_ZERO = "Amount must be greater than 0";
 	
 }

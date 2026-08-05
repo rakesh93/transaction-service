@@ -24,4 +24,10 @@ public class TransactionController {
 		return transactionService.deposit(accountNumber,transactionModel);
 	}
 	
+	@PostMapping("/withdraw/{accountNumber}")
+	public ApiResponse withdraw(@PathVariable String accountNumber,@RequestBody TransactionModel transactionModel) {
+		return transactionService.withdraw(accountNumber,transactionModel);
+	}
+	
+	
 }
