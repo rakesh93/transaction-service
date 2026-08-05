@@ -5,10 +5,10 @@ import com.ilearn.transaction_service.util.ApiResponse;
 
 public class TransactionService {
 
-	public ApiResponse deposit(TransactionModel transactionModel) {
+	public ApiResponse deposit(String accountNumber,TransactionModel transactionModel) {
 		
-		return null;
-
+		
+	return null;
 	}
 
 }

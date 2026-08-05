@@ -2,6 +2,7 @@ package com.ilearn.transaction_service.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,9 +19,9 @@ public class TransactionController {
 	@Autowired
 	TransactionService transactionService;
 	
-	@PostMapping("/deposit")
-	public ApiResponse deposit(@RequestBody TransactionModel transactionModel) {
-		return transactionService.deposit(transactionModel);
+	@PostMapping("/deposit/{accountNumber}")
+	public ApiResponse deposit(@PathVariable String accountNumber,@RequestBody TransactionModel transactionModel) {
+		return transactionService.deposit(accountNumber,transactionModel);
 	}
 	
 }

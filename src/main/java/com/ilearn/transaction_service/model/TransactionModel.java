@@ -24,7 +24,7 @@ public class TransactionModel {
 	int transactionId;
 	
 	@Column(name = "account_number")
-	@NotBlank(message = "Account Number is required")
+	@NotBlank(message = AppConstants.ACCOUNT_NUMBER)
 	String accountNumber;
 	
 	@Column(name = "amount")
