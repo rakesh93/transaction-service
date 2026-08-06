@@ -14,21 +14,22 @@ public class AccountModel {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long accountId;
-	
-    @Column(name = "account_number")
-    private String accountNumber;
 
-    @Column(name = "available_balance")
-    private Double availBalance;
-    
-    public AccountModel() {
+	@Column(name = "account_number")
+	private String accountNumber;
+
+	@Column(name = "available_balance")
+	private Double availBalance;
+
+	public AccountModel() {
 	}
-    
+
 	public AccountModel(Long accountId, String accountNumber, Double availBalance) {
 		super();
 		this.accountId = accountId;
 		this.accountNumber = accountNumber;
 		this.availBalance = availBalance;
+
 	}
 
 	public Long getAccountId() {
@@ -60,5 +61,5 @@ public class AccountModel {
 		return "AccountModel [accountId=" + accountId + ", accountNumber=" + accountNumber + ", availBalance="
 				+ availBalance + "]";
 	}
-   
+
 }

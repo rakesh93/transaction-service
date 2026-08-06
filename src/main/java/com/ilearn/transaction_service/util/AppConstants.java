@@ -23,5 +23,8 @@ public class AppConstants {
 	public static final String ACCOUNT_NUMBER_DUPLICATE = "Account Number is Already Exists";
 	public static final String AADHAR_NUMBER_DUPLICATE  = "Aadhar Number is Already Exists";
 	public static final String AMOUNT_GREATER_THAN_ZERO = "Amount must be greater than 0";
+	public static final String BALANCE_INSUFICIENT = "Transfer failed Due to Insufficient Balance in Sender Account";
+	public static final String BALANCE_TRANSFER = "Balance Transfer Successfully from Sender to Receiver Account";
+	public static final String SAME_ACCOUNT = "Sender and Receiver Account Number is Same";
 	
 }

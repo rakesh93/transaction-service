@@ -1,6 +1,7 @@
 package com.ilearn.transaction_service.model;
 
 import java.time.LocalDateTime;
+
 import com.ilearn.transaction_service.enums.TransactionType;
 import com.ilearn.transaction_service.util.AppConstants;
 import jakarta.persistence.Column;
@@ -11,6 +12,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
 
@@ -22,29 +24,35 @@ public class TransactionModel {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "transaction_id")
 	int transactionId;
-	
+
 	@Column(name = "account_number")
 	@NotBlank(message = AppConstants.ACCOUNT_NUMBER)
 	String accountNumber;
-	
+
 	@Column(name = "amount")
 	@Positive(message = AppConstants.AMOUNT_GREATER_THAN_ZERO)
 	double amount;
-	
+
 	@Enumerated(EnumType.STRING)
 	private TransactionType transactionType;
-	
+
 	@Column(name = "available_amount")
 	double availableAmount;
-	
+
 	@Column(name = "transaction_date")
 	LocalDateTime transactionDate;
+
+	@Transient
+	private String fromAccountNumber;
+
+	@Transient
+	private String toAccountNumber;
 
 	public TransactionModel() {
 	}
 
-	public TransactionModel(int transactionId, String accountNumber, double amount,TransactionType transactionType,
-			double availableAmount, LocalDateTime transactionDate) {
+	public TransactionModel(int transactionId, String accountNumber, double amount, TransactionType transactionType,
+			double availableAmount, LocalDateTime transactionDate, String fromAccountNumber, String toAccountNumber) {
 		super();
 		this.transactionId = transactionId;
 		this.accountNumber = accountNumber;
@@ -52,6 +60,8 @@ public class TransactionModel {
 		this.transactionType = transactionType;
 		this.availableAmount = availableAmount;
 		this.transactionDate = transactionDate;
+		this.fromAccountNumber = fromAccountNumber;
+		this.toAccountNumber = toAccountNumber;
 	}
 
 	public int getTransactionId() {
@@ -102,11 +112,29 @@ public class TransactionModel {
 		this.transactionDate = transactionDate;
 	}
 
+	public String getFromAccountNumber() {
+		return fromAccountNumber;
+	}
+
+	public void setFromAccountNumber(String fromAccountNumber) {
+		this.fromAccountNumber = fromAccountNumber;
+	}
+
+	public String getToAccountNumber() {
+		return toAccountNumber;
+	}
+
+	public void setToAccountNumber(String toAccountNumber) {
+		this.toAccountNumber = toAccountNumber;
+	}
+
+
 	@Override
 	public String toString() {
 		return "TransactionModel [transactionId=" + transactionId + ", accountNumber=" + accountNumber + ", amount="
 				+ amount + ", transactionType=" + transactionType + ", availableAmount=" + availableAmount
-				+ ", transactionDate=" + transactionDate + "]";
+				+ ", transactionDate=" + transactionDate + ", fromAccountNumber=" + fromAccountNumber
+				+ ", toAccountNumber=" + toAccountNumber + "]";
 	}
-
+	
 }
