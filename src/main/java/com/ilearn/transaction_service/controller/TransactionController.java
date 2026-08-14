@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ilearn.transaction_service.client_call.AccountResponse;
 import com.ilearn.transaction_service.model.TransactionModel;
 import com.ilearn.transaction_service.service.TransactionService;
 import com.ilearn.transaction_service.util.ApiResponse;
@@ -21,25 +22,29 @@ public class TransactionController {
 
 	@Autowired
 	TransactionService transactionService;
-	
+
 	@PatchMapping("/deposit/{accountNumber}")
-	public ApiResponse deposit(@PathVariable String accountNumber,@RequestBody TransactionModel transactionModel) {
-		return transactionService.deposit(accountNumber,transactionModel);
+	public ApiResponse deposit(@PathVariable String accountNumber, @RequestBody TransactionModel transactionModel) {
+		return transactionService.deposit(accountNumber, transactionModel);
 	}
-	
+
 	@PatchMapping("/withdraw/{accountNumber}")
-	public ApiResponse withdraw(@PathVariable String accountNumber,@RequestBody TransactionModel transactionModel) {
-		return transactionService.withdraw(accountNumber,transactionModel);
+	public ApiResponse withdraw(@PathVariable String accountNumber, @RequestBody TransactionModel transactionModel) {
+		return transactionService.withdraw(accountNumber, transactionModel);
 	}
-	
+
 	@PostMapping("/transfer")
 	public ApiResponse transfer(@RequestBody TransactionModel transactionModel) {
 		return transactionService.transfer(transactionModel);
 	}
-	
+
 	@GetMapping("/transactionList/{accountNumber}")
 	public ApiResponse transactionList(@PathVariable String accountNumber) {
 		return transactionService.transactionList(accountNumber);
 	}
-	
+
+	@GetMapping("/getAccounts")
+	public AccountResponse getAccounts() {
+		return transactionService.getAllAccount();
+	}
 }

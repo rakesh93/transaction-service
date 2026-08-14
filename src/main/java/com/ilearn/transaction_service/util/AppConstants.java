@@ -7,6 +7,7 @@ public class AppConstants {
 	public static final int FAILURE = 400;
 	public static final int NOT_FOUND = 404;
 	public static final int SERVER_ERROR = 500;
+	public static final int SERVER_UNAVAILABLE = 503;
 
 	// Message Value Constant
 	public static final String RESULT_FOUND = "Successfully got record";
@@ -26,5 +27,6 @@ public class AppConstants {
 	public static final String BALANCE_INSUFICIENT = "Transfer failed Due to Insufficient Balance in Sender Account";
 	public static final String BALANCE_TRANSFER = "Balance Transfer Successfully from Sender to Receiver Account";
 	public static final String SAME_ACCOUNT = "Sender and Receiver Account Number is Same";
+	public static final String ACCOUNT_SERVICE_DOWN = "Account Service is Currently Unavailable";
 	
 }
