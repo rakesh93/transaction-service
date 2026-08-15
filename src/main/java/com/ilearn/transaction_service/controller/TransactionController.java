@@ -16,7 +16,6 @@ import com.ilearn.transaction_service.service.TransactionService;
 import com.ilearn.transaction_service.util.ApiResponse;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/transactionservice")
 public class TransactionController {
 
